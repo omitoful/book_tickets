@@ -49,10 +49,30 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 const Gap(25),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xFFF4F6FD)
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  child: Row(
+                    children: [
+                      const Icon(FluentSystemIcons.ic_fluent_search_regular, color: Color(0xFFBFC205)),
+                      Text("Search", style: Styles.headLineStyle4)
+                    ],
+                  ),
+                ),
+                const Gap(40),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Icon(FluentSystemIcons.ic_fluent_search_regular, color: Color(0xFFBFC205)),
-                    Text("Search", style: Styles.headLineStyle4)
+                    Text("Upcoming Flights", style: Styles.headLineStyle2),
+                    InkWell(
+                      onTap: () {
+                        print("You are tapped");
+                      },
+                        child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor))
+                    )
                   ],
                 )
               ],
