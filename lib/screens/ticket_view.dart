@@ -3,6 +3,7 @@ import 'package:booktickets/utils/app_styles.dart';
 import 'package:booktickets/widgets/thick_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class TicketView extends StatefulWidget {
   const TicketView({Key? key}) : super(key: key);
@@ -22,6 +23,9 @@ class _TicketViewState extends State<TicketView> {
         margin: const EdgeInsets.only(left: 16, right: 16),
         child: Column(
           children: [
+            /*
+            showing the blue part of the card
+             */
             Container(
               decoration: BoxDecoration(
                 color: const Color(0xFF526799),
@@ -62,7 +66,22 @@ class _TicketViewState extends State<TicketView> {
 
                       ThickContainer(),
                       Expanded(child: Container()),
-                      Text("London", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                      Text("LDN", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                    ],
+                  ),
+                  const Gap(3),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: 100,
+                        child: Text("New-York", style: Styles.headLineStyle4.copyWith(color: Colors.white)),
+                      ),
+                      Text("8H 30M", style: Styles.headLineStyle4.copyWith(color: Colors.white)),
+                      SizedBox(
+                        width: 100,
+                        child: Text("London", textAlign: TextAlign.end, style: Styles.headLineStyle4.copyWith(color: Colors.white)),
+                      )
                     ],
                   )
                 ],
