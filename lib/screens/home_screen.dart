@@ -1,3 +1,4 @@
+import 'package:booktickets/screens/hotel_screen.dart';
 import 'package:booktickets/screens/ticket_view.dart';
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -19,8 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: [
           Container(
-            /// padding: EdgeInsets.only(left: 20, right: 20) -> same as down below
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+              /// padding: EdgeInsets.only(left: 20, right: 20) -> same as down below
+              padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
                 const Gap(40),
@@ -86,6 +87,35 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 TicketView(),
                 TicketView(),
+              ],
+            ),
+          ),
+          const Gap(15),
+          Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Hotels", style: Styles.headLineStyle2),
+                InkWell(
+                    onTap: () {
+                      print("You are tapped");
+                    },
+                    child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor))
+                )
+              ],
+            )
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 16),
+            child: Row(
+              children: [
+                HotelScreen(),
+                HotelScreen(),
+                HotelScreen(),
+                HotelScreen(),
               ],
             ),
           ),
