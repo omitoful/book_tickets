@@ -1,5 +1,6 @@
 import 'package:booktickets/screens/hotel_screen.dart';
 import 'package:booktickets/screens/ticket_view.dart';
+import 'package:booktickets/utils/app_info_list.dart';
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -84,10 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 16),
             child: Row(
-              children: [
-                TicketView(),
-                TicketView(),
-              ],
+              children: ticketList.map((ticket) => TicketView(ticket: ticket)).toList()
             ),
           ),
           const Gap(15),
@@ -111,12 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 16),
             child: Row(
-              children: [
-                HotelScreen(),
-                HotelScreen(),
-                HotelScreen(),
-                HotelScreen(),
-              ],
+              children: hotelList.map((hotel) => HotelScreen(hotel: hotel)).toList()
             ),
           ),
         ],
