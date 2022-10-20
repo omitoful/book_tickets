@@ -1,5 +1,6 @@
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
+import 'package:booktickets/widgets/layout_builder_widget.dart';
 import 'package:booktickets/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -45,20 +46,7 @@ class TicketView extends StatelessWidget {
                         children: [
                           SizedBox(
                             height: AppLayout.getHeight(24),
-                            child: LayoutBuilder(
-                              builder: (BuildContext context, BoxConstraints constraints) {
-                                return Flex(
-                                  direction: Axis.horizontal,
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: List.generate((constraints.constrainWidth()/6).floor(), (index) => SizedBox(
-                                    width: 3, height: 1, child: DecoratedBox(decoration: BoxDecoration(
-                                      color: isColor == null ? Colors.white : Colors.grey.shade300
-                                  ),),
-                                  )),
-                                );
-                              },
-                            ),
+                            child: AppLayoutBuilderWidget(isColor: isColor, sections: 6, height: 1, width: 3)
                           ),
                           Center(child: Transform.rotate(angle: 1.5, child: Icon(Icons.local_airport_rounded, color: isColor == null ? Colors.white : const Color(0xFF8ACCF7)))),
                         ],
@@ -118,23 +106,7 @@ class TicketView extends StatelessWidget {
                   ),
                   Expanded(child: Padding(
                     padding: EdgeInsets.all(AppLayout.getHeight(12)),
-                    child: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
-                      return Flex(
-                        direction: Axis.horizontal,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        mainAxisSize: MainAxisSize.max,
-                        children: List.generate((constraints.constrainWidth() / 15).floor(), (index) => SizedBox(
-                          height: 1,
-                          width: 5,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                                color: isColor == null ? Colors.white : Colors.grey.shade300
-                            ),
-                          ),
-                        )),
-                      );
-                    },
-                    ),
+                    child: AppLayoutBuilderWidget(isColor: isColor, sections: 15, height: 1, width: 5)
                   )),
                   SizedBox(
                     height: AppLayout.getHeight(20),
