@@ -6,7 +6,6 @@ import 'package:booktickets/widgets/double_text_widget.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
 import '../utils/app_layout.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,10 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Container(
               /// padding: EdgeInsets.only(left: 20, right: 20) -> same as down below
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(20)),
             child: Column(
               children: [
-                const Gap(40),
+                Gap(AppLayout.getHeight(40)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
